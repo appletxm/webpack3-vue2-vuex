@@ -1,13 +1,12 @@
-var express = require('express'),
-  webpack = require('webpack'),
-  path = require('path'),
-  webpackDevMiddleware = require('webpack-dev-middleware'),
-  webpackHotMiddleware = require('webpack-hot-middleware'),
-  envConfig = require('../config/env'),
-  webpackConfig = require('../config/webpack.config'),
-  serverRouter = require('./serverRouter'),
-  open = require('open')
-
+var express = require('express')
+var webpack = require('webpack')
+var path = require('path')
+var webpackDevMiddleware = require('webpack-dev-middleware')
+var webpackHotMiddleware = require('webpack-hot-middleware')
+var envConfig = require('../config/env')
+var webpackConfig = require('../config/webpack.config')
+var serverRouter = require('./serverRouter')
+var open = require('open')
 var app = express()
 var compiler = webpack(webpackConfig)
 var host = envConfig['development']['host']
@@ -17,7 +16,6 @@ process.env.NODE_ENV = process.argv && process.argv.length >= 2 ? (process.argv)
 
 // console.info( process.argv, process.env.NODE_ENV)
 // console.info(compiler.outputPath, path.join(compiler.outputPath, 'index.html'))
-
 // attach to the compiler & the server
 app.use(webpackDevMiddleware(compiler, {
   // public path should be the same with webpack config

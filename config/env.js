@@ -20,9 +20,17 @@ module.exports = {
   },
   test: {},
   mock: {
-    proxy: {
+    host: '127.0.0.1',
+    port: 8089,
+    get publicPath() {
+      return 'http://' + this.host + ':' + this.port + '/dist/'
+    },
+    // publicPath: this.host + ':' + this.port + '/dist/',
+    distPath: '../dist/',
+    sourcePath: '../src/',
+    api: {
       host: '127.0.0.1',
-      port: '5000'
+      port: '9000'
     }
   }
 }

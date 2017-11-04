@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+const urlPrefix = '/api'
+
 /* eslint-disable */
 const configAxios = {
   decorate(urlPrefix) {
@@ -28,7 +30,8 @@ const configAxios = {
     })
   }
 }
-
 /* eslint-enable */
+
+configAxios.decorate(urlPrefix)
 
 export default configAxios

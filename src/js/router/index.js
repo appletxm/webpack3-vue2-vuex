@@ -4,7 +4,6 @@ import VueRouter from 'vue-router'
 // import home from 'pages/home'
 // import help from 'pages/help'
 // import about from 'pages/about'
-import configAxios from 'common/axioDecorate'
 
 let routes, router
 
@@ -27,8 +26,6 @@ let routes, router
 const Home = () => import(/* webpackChunkName: "Home" */ 'pages/home')
 const Help = () => import(/* webpackChunkName: "Help" */ 'pages/help')
 const About = () => import(/* webpackChunkName: "About" */ 'pages/about')
-
-configAxios.decorate('/api')
 
 Vue.use(VueRouter)
 
