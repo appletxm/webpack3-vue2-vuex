@@ -1,5 +1,4 @@
 /* global console */
-import Vue from 'vue'
 import axios from 'axios'
 import html from './template.html'
 import { Toast } from 'mint-ui'
@@ -32,5 +31,7 @@ export default {
       })
     }
   },
-  mounted() {}
+  mounted() {
+    console.info('-----------22--------')
+  }
 }

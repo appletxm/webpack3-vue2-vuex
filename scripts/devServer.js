@@ -4,9 +4,9 @@ var express = require('express'),
   webpackDevMiddleware = require('webpack-dev-middleware'),
   webpackHotMiddleware = require('webpack-hot-middleware'),
   envConfig = require('../config/env'),
-  webpackConfig = require('../config/webpack.config')
-serverRouter = require('./serverRouter'),
-open = require('open')
+  webpackConfig = require('../config/webpack.config'),
+  serverRouter = require('./serverRouter'),
+  open = require('open')
 
 var app = express()
 var compiler = webpack(webpackConfig)
