@@ -13,6 +13,8 @@ var vendorPath, cssPath
 var sourcePath, distPath
 var webpackConfig
 
+// console.info('*******************', require('../scripts/txm-loader'))
+
 process.env.NODE_ENV = envKeyWord
 sourcePath = path.join(__dirname, env.sourcePath)
 distPath = path.join(__dirname, env.distPath)
@@ -29,8 +31,20 @@ webpackConfig = {
     path: path.resolve('./dist'),
     publicPath: publicPath
   },
+
+  resolveLoader: {
+    alias: {
+      'txm-loader': path.resolve(__dirname, '../scripts/txm-loader.js')
+    }
+  },
+
   module: {
     rules: [
+      {
+        test: /env\.cfg$/,
+        loader: 'txm-loader',
+        include: [path.join(__dirname, '..', 'src'), path.join(__dirname, '..', 'test')]
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',

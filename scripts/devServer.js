@@ -14,6 +14,13 @@ var port = envConfig['development']['port']
 
 process.env.NODE_ENV = process.argv && process.argv.length >= 2 ? (process.argv)[2] : 'development'
 
+compiler.watch({
+  aggregateTimeout: 300,
+  poll: true
+}, function (err, state) {
+  console.info('=============wath===========', state)
+})
+
 // console.info( process.argv, process.env.NODE_ENV)
 // console.info(compiler.outputPath, path.join(compiler.outputPath, 'index.html'))
 // attach to the compiler & the server

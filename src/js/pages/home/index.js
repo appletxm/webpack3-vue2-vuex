@@ -3,6 +3,10 @@ import axios from 'axios'
 import html from './template.html'
 import { Toast } from 'mint-ui'
 
+import cfg from '../../../../config/env.cfg'
+
+console.info('============cfg============', cfg)
+
 export default {
   template: html,
   data() {
